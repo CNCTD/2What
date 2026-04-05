@@ -1,5 +1,5 @@
 // components/Callout.jsx
-// The React component rendered by the {% callout %} Markdoc tag.
+// react for callout
 
 const styles = {
   note:    { background: "#e8f4fd", border: "#3b82f6", label: "Note" },
