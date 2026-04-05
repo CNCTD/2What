@@ -5,8 +5,8 @@ import fs from "fs";
 import path from "path";
 import Markdoc from "@markdoc/markdoc";
 import React from "react";
-import { Callout } from "@/components/Callout";
-import { callout } from "@/markdoc.config";
+import { Callout } from "../../../components/Callout";
+import { callout } from "../../../markdoc.config";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
