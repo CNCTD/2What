@@ -5,8 +5,8 @@ import fs from "fs";
 import path from "path";
 import Markdoc from "@markdoc/markdoc";
 import React from "react";
-import { Callout } from "../../../components/Callout";
-import { callout } from "../../../markdoc.config";
+import { Callout } from "@/components/Callout";
+import { callout } from "@/markdoc.config";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -18,8 +18,9 @@ export async function generateStaticParams() {
     .map((f) => ({ slug: f.replace(/\.md$/, "") }));
 }
 
-export default function DocPage({ params }) {
-  const filePath = path.join(CONTENT_DIR, `${params.slug}.md`);
+export default async function DocPage({ params }) {
+  const { slug } = await params;
+  const filePath = path.join(CONTENT_DIR, `${slug}.md`);
   const source = fs.readFileSync(filePath, "utf8");
 
   const ast = Markdoc.parse(source);
